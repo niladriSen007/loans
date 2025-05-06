@@ -8,16 +8,17 @@ import com.niladri.loans.mapper.LoanMapper;
 import com.niladri.loans.model.loan.LoanModel;
 import com.niladri.loans.repository.loan.LoanRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.Random;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class LoanService implements LoanServiceInterface {
 
-    private LoanRepository loanRepo;
+    private final LoanRepository loanRepo;
 
     @Override
     public LoanDto applyLoan(String mobileNumber) {
