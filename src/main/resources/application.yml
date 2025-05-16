@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: loans
+  profiles:
+    active: "prod"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
   datasource:
     url: jdbc:postgresql://localhost:5432/jpa-microservice-loans
     driver-class-name: org.postgresql.Driver
